@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/*----------------------------------------------   
+-Defualt to border-box
+-----------------------------------------------  */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: helvetica;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-family: Raleway;
+  line-height: 1.4;
+}
+
+/*----------------------------------------------   
+--Fluid body sizing
+-----------------------------------------------  */
+body {
+  font-size: 100%;
+}
+@media (min-width: 32em) {
+  body {
+    font-size: 110%;
+  }
+}
+@media (min-width: 54em) {
+  body {
+    font-size: 111%;
+  }
+}
+@media (min-width: 74em) {
+  body {
+    font-size: 115%;
+  }
+}
+@media (min-width: 96em) {
+  body {
+    font-size: 135%;
+  }
+}
+
+a.btn {
+  background-color: #54A984;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 0.1em;
+  padding: 0.5em 0em;
+}
+a.btn.btn-beta {
+  background-color: #e36e3a;
+}
+
+.decor-line {
+  position: relative;
+  top: 0.7em;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  max-width: 40%;
+  margin: 0.5em auto;
+  display: block;
+  padding: 0.1em 1em;
+  color: #ccc;
+}
+.decor-line span {
+  background: #fff;
+  color: #ccc;
+  position: relative;
+  top: -.7em;
+  padding: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 900;
+}
+
+.overlay-verify {
+  background: #000;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.box {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20%;
+  bottom: 0;
+  margin: 0 auto;
+  z-index: 9;
+  width: 70%;
+  height: 40%;
+  display: table;
+}
+.box .box-left, .box .box-right {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  padding: 5%;
+}
+@media (min-width: 54em) {
+  .box .box-left, .box .box-right {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+  }
+}
+.box .box-left p, .box .box-right p {
+  position: relative;
+  z-index: 3;
+}
+.box .box-left {
+  background: url(https://d1di2lzuh97fh2.cloudfront.net/files/1a/1a8/1a81kf.jpg?ph=c356971034&t=1) 50% 50%;
+  background-size: cover;
+  color: #fff;
+}
+.box .box-left img {
+  position: relative;
+  z-index: 4;
+  width: 9em;
+}
+.box .box-left:after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.box .box-right {
+  text-align: center;
+}
+.box .box-right h3 {
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1em;
+  margin: 0 auto;
+}
+.box .box-right p {
+  color: #aaa;
+}
+.box .box-right small {
+  color: #ccc;
+}
+.box .box-right .btn {
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  padding: 0.9em 1em 0.7em;
+  margin: 1em auto;
+  display: block;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body translate="no">
+
+
+
+
+
+
+
+
+<link href='https://fonts.googleapis.com/css?family=Raleway:600,900,400' rel='stylesheet' type='text/css'>
+<main>
+<article class="box">
+<div class="box-left">
+<img src="https://avina-vino-italiano.webnode.be/_files/200000090-9d5f69d5f8/200/Logo%202.png">
+<p>
+
+
+Il n'est possible d'acheter du vin en ligne que si vous avez plus de 18 ans.
+
+
+</p>
+</div>
+<div class="box-right">
+<h3>
+
+
+Vérification d'âge
+	
+	
+</h3>
+<p>
+
+
+En cliquant sur "entrer", je certifie que j'ai plus de 18 ans.
+
+
+
+</p>
+<a href="#" class="btn btn-alpha" id="refresh-page">ENTRER</a>
+<p class="decor-line"><span>Or</span></p>
+<a href="#" class="btn btn-beta" id="reset-session">SORTIR</a>
+<small>
+
+
+L'abus d'alcool est dangereux pour la santé. 
+
+
+</small>
+</div>
+</div>
+</article>
+<div class="overlay-verify"></div>
+</main>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script id="rendered-js">
+jQuery(document).ready(function ($) {
+
+  if (sessionStorage.getItem('advertOnce') !== 'true') {
+    //sessionStorage.setItem('advertOnce','true');
+    $('.box').show();
+  } else {
+    $('.box').hide();
+  }
+
+  $('#refresh-page').on('click', function () {
+    $('.box').hide();
+    sessionStorage.setItem('advertOnce', 'true');
+  });
+
+  $('#reset-session').on('click', function () {
+    $('.box').show();
+    sessionStorage.setItem('advertOnce', '');
+  });
+
+});
+//# sourceURL=pen.js
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>
